@@ -2,142 +2,185 @@ import streamlit as st
 import pandas as pd
 from datetime import datetime
 
-# --- KONFIGURASI HALAMAN ---
-st.set_page_config(page_title="JMS EduGate - Deep Learning Engine", layout="wide", page_icon="🛡️")
+# ==========================================
+# 1. KONFIGURASI HALAMAN & TEMA
+# ==========================================
+st.set_page_config(
+    page_title="JMS EduGate - SMAN 1 Muara Sugihan",
+    page_icon="🛡️",
+    layout="wide"
+)
 
-# --- CUSTOM CSS (PROFESSIONAL & BOLD) ---
+# CSS untuk tampilan premium dan profesional
 st.markdown("""
     <style>
-    .stApp { background-color: #f8f9fa; }
-    .main-header { background: linear-gradient(90deg, #1e3d59, #2e5a88); padding: 20px; border-radius: 15px; color: white; text-align: center; margin-bottom: 25px; }
-    .module-box { background: white; padding: 30px; border-radius: 15px; border-left: 8px solid #ff6e40; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-bottom: 20px; }
-    .stButton>button { background-color: #1e3d59; color: white; border-radius: 10px; font-weight: bold; height: 3em; }
-    .stButton>button:hover { background-color: #ff6e40; }
+    .stApp { background-color: #f4f7f9; }
+    .main-header { 
+        background: linear-gradient(135deg, #1e3d59 0%, #2e5a88 100%); 
+        padding: 30px; border-radius: 20px; color: white; text-align: center; 
+        margin-bottom: 30px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .module-card { 
+        background: white; padding: 40px; border-radius: 25px; 
+        border-top: 12px solid #ff6e40; box-shadow: 0 15px 35px rgba(0,0,0,0.05); 
+    }
+    .stButton>button { 
+        background-color: #1e3d59; color: white; border-radius: 12px; 
+        font-weight: bold; height: 3.8em; border: none; transition: 0.3s;
+    }
+    .stButton>button:hover { background-color: #ff6e40; transform: translateY(-2px); }
     </style>
     """, unsafe_allow_html=True)
 
-# --- DATABASE STRUKTUR MODUL (BERDASARKAN DOKUMEN SOURCE) ---
-def generate_deep_learning_module(topik, kelas, penyusun="ZULFADHLI ROMADHON, S.Pd.,Gr"):
-    now = datetime.now()
+# ==========================================
+# 2. ENGINE GENERATOR (LOGIKA DEEP LEARNING)
+# ==========================================
+def generate_universal_module(mapel, topik, kelas, penyusun):
+    """
+    Menghasilkan modul ajar dengan pola Deep Learning sesuai referensi dokumen PJOK.
+    """
     return f"""
-# 🛡️ MODUL AJAR DEEP LEARNING (FASE F)
-**MATA PELAJARAN:** Pendidikan Jasmani, Olahraga, & Kesehatan (PJOK)
+# 🛡️ MODUL AJAR DEEP LEARNING: {mapel.upper()}
+**INSTITUSI:** SMAN 1 MUARA SUGIHAN
 
 ---
 
-## A. IDENTITAS MODUL
-* **Nama Sekolah:** SMAN 1 MUARA SUGIHAN
+## I. IDENTITAS MODUL [cite: 4-10]
+* **Mata Pelajaran:** {mapel}
+* **Topik Utama:** {topik}
 * **Penyusun:** {penyusun}
-* **Kelas / Fase:** {kelas} / F
+* **Kelas / Fase / Semester:** {kelas} / F / Ganjil
 * **Tahun Pelajaran:** 2025 / 2026
-* **Alokasi Waktu:** 12 JP (4 Pertemuan)
 
-## B. IDENTIFIKASI KESIAPAN PESERTA DIDIK
-* Peserta didik memiliki tingkat kesiapan fisik dan pengetahuan awal yang bervariasi.
-* Kebutuhan belajar mencakup pengenalan teknik bagi pemula dan penguatan taktik bagi yang mahir.
-* Latar belakang sosial budaya mempengaruhi keakraban dengan aktivitas fisik.
+## II. IDENTIFIKASI KESIAPAN PESERTA DIDIK [cite: 11-17]
+* **Kesiapan Kognitif:** Peserta didik memiliki tingkat pemahaman awal yang bervariasi mengenai {topik}[cite: 12].
+* **Kebutuhan Belajar:** Diferensiasi instruksi diperlukan untuk menjembatani siswa pemula hingga tingkat lanjut [cite: 16-17].
 
-## C. KARAKTERISTIK MATERI (DEEP LEARNING)
-* **Pengetahuan:** Prosedural (langkah teknik), Konseptual (aturan), Metakognitif (analisis performa).
-* **Relevansi Nyata:** Menumbuhkan kebugaran, kerja sama tim, sportivitas, dan kedisiplinan.
-* **Nilai Karakter:** Pantang menyerah, tanggung jawab, dan saling menghargai.
+## III. KARAKTERISTIK MATERI [cite: 18-23]
+* **Jenis Pengetahuan:** Konseptual (Teori), Prosedural (Langkah kerja), dan Metakognitif (Refleksi diri)[cite: 19].
+* **Relevansi Nyata:** Membangun kemandirian, nalar kritis, dan kolaborasi [cite: 26-30].
 
-## D. DIMENSI PROFIL LULUSAN
-1. **Penalaran Kritis:** Mampu menganalisis situasi permainan dan membuat keputusan taktis.
-2. **Kreativitas:** Mengaplikasikan variasi gerak untuk solusi dalam permainan.
-3. **Kolaborasi:** Bekerja sama efektif dalam tim untuk tujuan bersama.
-4. **Kemandirian:** Mampu mengelola diri dan berlatih secara inisiatif.
-5. **Kesehatan:** Memahami pentingnya pola hidup sehat melalui olahraga.
+## IV. DESAIN PEMBELAJARAN (DEEP LEARNING FRAMEWORK) [cite: 59-63, 522-525]
+* **Capaian Pembelajaran (CP):** Sesuai Keputusan Kepala BSKAP Nomor 032/H/KR/2024[cite: 32, 492].
+* **Mindful Learning:** Fokus pada kesadaran diri dan konsentrasi siswa terhadap materi[cite: 523].
+* **Meaningful Learning:** Menghubungkan {topik} dengan disiplin ilmu lain (Fisika/Biologi/Matematika) dan kehidupan nyata [cite: 38-41, 316-320, 524].
+* **Joyful Learning:** Menciptakan suasana belajar yang menggembirakan melalui eksplorasi digital dan simulasi[cite: 525].
 
-## E. DESAIN PEMBELAJARAN (KERANGKA KERJA)
-* **Model:** Teaching Games for Understanding (TGfU) / Discovery Learning.
-* **Strategi:** Joyful Learning (pendekatan bermain), Meaningful Learning (simulasi nyata), Mindful Learning (refleksi).
-* **Digital:** Google Classroom, YouTube Tutorial, dan Video Replay untuk Peer-Feedback.
+## V. LANGKAH PEMBELAJARAN BERDIFERENSIASI [cite: 78-106, 541-594]
+### A. Kegiatan Pendahuluan (15 Menit) [cite: 80-86]
+* Guru memulai dengan pertanyaan pemantik untuk memicu kesadaran (Mindful Learning) [cite: 81-82].
+* Menayangkan media visual yang menginspirasi untuk membangkitkan antusiasme (Joyful Learning)[cite: 83].
 
-## F. LANGKAH PEMBELAJARAN BERDIFERENSIASI
-### 1. Kegiatan Pendahuluan (15 Menit)
-* **Ritual Mindful:** Latihan pernapasan singkat untuk fokus.
-* **Apersepsi Joyful:** Video cuplikan pertandingan inspiratif.
-* **Pertanyaan Pemantik:** "Apa peran teknik ini dalam kemenangan sebuah tim?"
+### B. Kegiatan Inti (60 Menit) [cite: 87-100]
+* **Diferensiasi Konten:** Menyediakan berbagai sumber belajar (Video, Artikel, atau Kartu Tugas) [cite: 88-90].
+* **Diferensiasi Proses (Berdasarkan Kesiapan):** [cite: 368, 375-379]
+    * *Kelompok Dasar:* Pendampingan intensif (scaffolding) pada teknik/konsep fundamental[cite: 94, 377].
+    * *Kelompok Menengah:* Latihan variasi dan pengembangan pemahaman[cite: 378].
+    * *Kelompok Mahir:* Tantangan analisis mandiri atau simulasi kompleks[cite: 95, 379].
+* **Diferensiasi Produk:** Kebebasan memilih format laporan hasil belajar (Video/Poster/Jurnal) [cite: 98-100, 221-223].
 
-### 2. Kegiatan Inti (60 Menit)
-* **Memahami:** Demonstrasi teknik dasar melalui video dan kartu tugas bergambar.
-* **Mengaplikasi (Diferensiasi Proses):**
-    * *Kelompok Dasar:* Fokus pada teknik statis dengan bantuan guru.
-    * *Kelompok Menengah:* Latihan variasi jarak dan bergerak.
-    * *Kelompok Mahir:* Simulasi tanding dengan tantangan taktik kompleks.
-* **Merefleksi:** Peserta didik merekam performa teman dan memberikan masukan (Peer-Coaching).
+### C. Kegiatan Penutup (15 Menit) [cite: 101-106]
+* Refleksi bersama mengenai tantangan dan strategi pemecahan masalah [cite: 102-104].
+* Pendinginan fisik/mental dan perencanaan pembelajaran mandiri selanjutnya [cite: 415-420].
 
-### 3. Kegiatan Penutup (15 Menit)
-* Pendinginan dan refleksi bersama tentang tantangan yang dihadapi.
-* Guru memberikan apresiasi atas sportivitas dan usaha peserta didik.
-
-## G. ASESMEN PEMBELAJARAN
-### 1. Asesmen Diagnostik (Awal)
-* Kuesioner minat dan tes praktik keterampilan dasar (misal: memantulkan bola 30 detik).
-
-### 2. Asesmen Formatif (Proses)
-* Lembar observasi sikap (disiplin, kerja sama) dan rubrik performa saat drill.
-
-### 3. Asesmen Sumatif (Akhir)
-* **Kinerja:** Pertandingan modifikasi (3v3 atau 5v5).
-* **Proyek:** Laporan analisis taktik tim profesional dalam bentuk infografis/video.
-* **Tertulis:** Evaluasi pemahaman aturan dan strategi permainan.
+## VI. ASESMEN PEMBELAJARAN [cite: 228-278, 595-636]
+1. **Asesmen Diagnostik (Awal):** Mengidentifikasi pengetahuan awal dan minat [cite: 229-236, 596-602].
+2. **Asesmen Formatif (Proses):** Observasi partisipasi, jurnal refleksi, dan peer-feedback [cite: 237-251, 603-612].
+3. **Asesmen Sumatif (Akhir):** Penilaian kinerja proyek, analisis taktik/strategi, dan tes tertulis [cite: 252-278, 613-636].
 
 ---
-**Mengetahui,** **Guru Mata Pelajaran,**
-Kepala Sekolah                                  {penyusun}
+**Mengetahui,** **Palembang, {datetime.now().strftime('%d %B %Y')}**
+**Kepala Sekolah** **Guru Mata Pelajaran**
+
+**(BUDIYONO S.Pd M.Pd)** **({penyusun})**
+NIP. 196911042001121004                       NIP. [Input NIP Guru]
     """
 
-# --- SIDEBAR NAVIGATION ---
+# ==========================================
+# 3. ANTARMUKA PENGGUNA (UI)
+# ==========================================
+
+# Sidebar Navigasi
 with st.sidebar:
-    st.image("https://cdn-icons-png.flaticon.com/512/3429/3429433.png", width=80)
-    st.title("JMS EduGate")
-    menu = st.radio("MODUL SISTEM:", ["Dashboard", "AI Module Generator", "Rubrik Asesmen", "Database Siswa", "Vibe Check"])
+    st.markdown("<h2 style='text-align: center;'>🛡️ JMS EduGate</h2>", unsafe_allow_html=True)
+    st.caption("Pusat Kendali Deep Learning SMAN 1 Muara Sugihan")
     st.divider()
-    st.write("Logged in as: kickboxingjms@gmail.com")
+    menu = st.radio("SISTEM NAVIGASI:", 
+                    ["🏠 Dashboard Utama", "📝 Generator Modul (Semua Mapel)", "📊 Bank Rubrik Asesmen", "⚡ Vibe Check Kelas"])
+    st.divider()
+    nama_guru = st.text_input("Nama Penyusun:", "ZULFADHLI ROMADHON, S.Pd.,Gr")
+    st.info("Email Admin: kickboxingjms@gmail.com")
 
-# --- LOGIC PER MENU ---
-if menu == "Dashboard":
-    st.markdown("<div class='main-header'><h1>Pusat Kendali Guru Juara</h1><p>Sistem Operasi Deep Learning SMAN 1 Muara Sugihan</p></div>", unsafe_allow_html=True)
-    st.info("Aplikasi ini telah disinkronkan dengan Modul Ajar PJOK 2025/2026.")
+# Halaman Dashboard
+if menu == "🏠 Dashboard Utama":
+    st.markdown("<div class='main-header'><h1>Selamat Datang di JMS EduGate</h1><p>Mewujudkan Generasi Juara Melalui Deep Learning</p></div>", unsafe_allow_html=True)
     
-elif menu == "AI Module Generator":
-    st.title("📝 AI Deep Learning Generator")
-    st.write("Hasilkan Modul Ajar Lengkap berdasarkan Struktur Deep Learning.")
+    c1, c2, c3 = st.columns(3)
+    c1.metric("Standar Kualitas", "Deep Learning", "Standardized")
+    c2.metric("Referensi Kurikulum", "CP No. 32 Thn 2024", "Updated")
+    c3.metric("Status Sistem", "Universal", "All Subjects")
+
+    st.markdown("---")
+    st.markdown("""
+    ### 🛡️ Filosofi Pembelajaran SMAN 1 Muara Sugihan
+    Aplikasi ini mengintegrasikan kerangka **Deep Learning** ke dalam setiap mata pelajaran [cite: 62, 522-525]:
+    * **Mindful Learning:** Menanamkan kesadaran penuh dalam setiap proses belajar[cite: 523].
+    * **Meaningful Learning:** Menghubungkan setiap materi dengan realitas kehidupan[cite: 524].
+    * **Joyful Learning:** Memastikan proses belajar berlangsung secara menyenangkan dan antusias[cite: 525].
+    """)
+
+# Halaman Generator
+elif menu == "📝 Generator Modul (Semua Mapel)":
+    st.title("📝 Universal AI Module Generator")
+    st.write("Buat Modul Ajar berstandar Deep Learning untuk mata pelajaran apa pun.")
     
-    col1, col2 = st.columns(2)
-    with col1:
-        topik = st.selectbox("Pilih Unit Olahraga:", 
-                            ["Bola Basket", "Bola Voli", "Sofbol", "Pencak Silat", "Lompat Jangkit", "Lempar Cakram", "Senam Irama", "Kebugaran", "HIV/AIDS"])
-    with col2:
-        kelas = st.selectbox("Pilih Kelas:", ["XII", "XI", "X"])
+    with st.container():
+        col_left, col_right = st.columns(2)
+        with col_left:
+            mapel = st.selectbox("Pilih Mata Pelajaran:", 
+                                ["Matematika", "Fisika", "Biologi", "Kimia", "Geografi", "Sejarah", 
+                                 "Bahasa Indonesia", "Bahasa Inggris", "Seni Budaya", "PJOK", "PAI", "PKn"])
+        with col_right:
+            topik = st.text_input("Input Topik Spesifik:", placeholder="Misal: Lempeng Tektonik atau Statistika")
         
-    if st.button("Generate Modul Lengkap"):
-        modul = generate_deep_learning_module(topik, kelas)
-        st.markdown("<div class='module-box'>", unsafe_allow_html=True)
-        st.markdown(modul)
-        st.markdown("</div>", unsafe_allow_html=True)
-        st.download_button("Download Modul (MD)", modul, file_name=f"Modul_JMS_{topik}.md")
+        tingkat = st.select_slider("Tingkat Kelas:", options=["X", "XI", "XII"])
+        
+        if st.button("Generate & Terbitkan Modul"):
+            if topik:
+                with st.spinner("Sedang memproses modul sesuai standar SMAN 1 Muara Sugihan..."):
+                    hasil_modul = generate_universal_module(mapel, topik, tingkat, nama_guru)
+                    st.markdown("<div class='module-card'>", unsafe_allow_html=True)
+                    st.markdown(hasil_modul)
+                    st.markdown("</div>", unsafe_allow_html=True)
+                    st.download_button("Unduh Modul (.md)", hasil_modul, file_name=f"Modul_{mapel}_{topik}.md")
+            else:
+                st.error("Mohon masukkan topik pelajaran terlebih dahulu.")
 
-elif menu == "Rubrik Asesmen":
-    st.title("📊 Rubrik Asesmen Komprehensif")
-    st.write("Detail kriteria penilaian untuk aspek Keterampilan, Taktik, dan Sikap.")
+# Halaman Rubrik Asesmen
+elif menu == "📊 Bank Rubrik Asesmen":
+    st.title("📊 Bank Rubrik Standar Deep Learning")
+    st.write("Kriteria penilaian ini diadopsi dari standar instrumen penilaian PJOK [cite: 258-271, 619-627].")
     
-    st.subheader("1. Rubrik Penilaian Kinerja (Permainan)")
-    st.table(pd.DataFrame({
-        "Aspek": ["Teknik Dasar", "Taktik", "Kerja Sama", "Sportivitas"],
-        "Kriteria Baik (4)": ["Gerak akurat & konsisten", "Keputusan taktis tepat", "Komunikasi aktif", "Menghargai lawan & aturan"],
-        "Kriteria Cukup (2)": ["Gerak cukup tapi belum stabil", "Sering salah posisi", "Kurang komunikasi", "Kadang emosional"]
-    }))
+    rubrik = {
+        "Kriteria": ["Pemahaman Konsep", "Aplikasi Teknik/Strategi", "Kolaborasi & Komunikasi", "Penalaran Kritis & Kreativitas"],
+        "Sangat Baik (4)": ["Analisis mendalam, akurat & relevan", "Penerapan lancar tanpa kesalahan teknis", "Aktif, suportif & koordinasi tim yang kuat", "Menyajikan solusi/variasi gerak yang inovatif"],
+        "Cukup (2)": ["Pemahaman dasar/hanya hafal definisi", "Cukup lancar dengan bantuan/koreksi", "Bekerja secara individu, kurang interaksi", "Hanya mengikuti instruksi standar"]
+    }
+    st.table(pd.DataFrame(rubrik))
+    st.caption("Gunakan rubrik ini untuk penilaian Asesmen Sumatif (Kinerja & Proyek).")
 
-elif menu == "Vibe Check":
-    st.title("⚡ Vibe Check (Instruksi Real-Time)")
-    mood = st.select_slider("Kondisi Kelas?", ["Ngantuk", "Bosan", "Berisik", "Siap"])
-    if st.button("Dapatkan Solusi"):
-        if mood == "Ngantuk":
-            st.error("🔥 **SOLUSI:** Gerakan 'Double Jab - Cross' Kickboxing 10 set untuk memacu adrenalin!")
-        elif mood == "Berisik":
-            st.warning("🧘 **SOLUSI:** Mindful Breathing (4-4-4) untuk menenangkan saraf.")
+# Halaman Vibe Check
+elif menu == "⚡ Vibe Check Kelas":
+    st.title("⚡ Vibe Check (Manajemen Kelas Real-Time)")
+    st.write("Tingkatkan energi kelas dalam sekejap dengan instruksi berbasis kondisi psikologis.")
+    
+    status = st.selectbox("Bagaimana kondisi kelas saat ini?", ["Ngantuk Berat", "Sangat Berisik", "Kurang Fokus", "Siap Belajar"])
+    if st.button("Dapatkan Solusi!"):
+        if status == "Ngantuk Berat":
+            st.error("🚨 **SOLUSI KICKBOXING:** Instruksikan siswa berdiri. Lakukan gerakan 'Double Jab - Cross' sebanyak 10 set. Teriakkan 'JUARA!' di akhir gerakan!")
+        elif status == "Sangat Berisik":
+            st.warning("🤫 **SOLUSI MINDFULNESS:** Hening sejenak selama 2 menit. Lakukan teknik napas kotak (4 detik tarik, 4 tahan, 4 buang).")
+        elif status == "Kurang Fokus":
+            st.info("🎮 **SOLUSI GAME:** Lakukan kuis kilat 3 pertanyaan interaktif berhadiah poin apresiasi.")
         else:
-            st.success("🌟 **SOLUSI:** Lanjutkan materi inti dengan tantangan kompetisi kecil.")
+            st.success("🌟 **PERTAHANKAN:** Berikan apresiasi dan lanjut ke inti materi dengan antusiasme tinggi!")
