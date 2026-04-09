@@ -3,127 +3,141 @@ import pandas as pd
 from datetime import datetime
 
 # --- KONFIGURASI HALAMAN ---
-st.set_page_config(page_title="JMS EduGate - Premium", layout="wide", page_icon="🛡️")
+st.set_page_config(page_title="JMS EduGate - Deep Learning Engine", layout="wide", page_icon="🛡️")
 
-# --- STYLE VISUAL (SOPHISTICATED DARK & ACCENT) ---
+# --- CUSTOM CSS (PROFESSIONAL & BOLD) ---
 st.markdown("""
     <style>
-    .main { background-color: #f4f7f6; }
-    .stButton>button { 
-        width: 100%; border-radius: 12px; height: 3.5em; 
-        background: linear-gradient(135deg, #1e3d59 0%, #2e5a88 100%); 
-        color: white; font-weight: bold; border: none; box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    }
-    .stButton>button:hover { background: #ff6e40; transform: translateY(-2px); }
-    .content-card { 
-        background-color: white; padding: 25px; border-radius: 15px; 
-        border-left: 5px solid #1e3d59; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
-    h1, h2 { color: #1e3d59; font-weight: 800; }
-    .stExpander { border-radius: 10px; border: 1px solid #ddd; background-color: white; }
+    .stApp { background-color: #f8f9fa; }
+    .main-header { background: linear-gradient(90deg, #1e3d59, #2e5a88); padding: 20px; border-radius: 15px; color: white; text-align: center; margin-bottom: 25px; }
+    .module-box { background: white; padding: 30px; border-radius: 15px; border-left: 8px solid #ff6e40; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-bottom: 20px; }
+    .stButton>button { background-color: #1e3d59; color: white; border-radius: 10px; font-weight: bold; height: 3em; }
+    .stButton>button:hover { background-color: #ff6e40; }
     </style>
     """, unsafe_allow_html=True)
 
-# --- FUNGSI GENERATOR MEDIA AJAR LENGKAP ---
-def generate_creative_media(topik):
-    return {
-        "Slide": [
-            "**Slide 1: Hook Visual** - Gambar/Video kontras tentang " + topik,
-            "**Slide 2: Definisi & Urgensi** - Mengapa siswa harus peduli dengan " + topik + "?",
-            "**Slide 3: Mekanisme Inti** - Diagram alur/Proses terjadinya " + topik,
-            "**Slide 4: Studi Kasus/Simulasi** - Contoh nyata di lapangan.",
-            "**Slide 5: Challenge** - Pertanyaan pemantik untuk diskusi kelompok."
-        ],
-        "Video": f"**Naskah Video (60 Detik):**\n- 00-10: Pembukaan dengan pertanyaan retoris.\n- 10-40: Animasi penjelasan konsep {topik}.\n- 40-60: Kesimpulan dan tantangan praktik.",
-        "LKS": f"**Lembar Kerja Siswa (JMS-Style):**\n1. Observasi: Apa yang kamu lihat dari fenomena {topik}?\n2. Analisis: Mengapa hal itu bisa terjadi?\n3. Action: Jika kamu seorang ahli, apa solusi yang kamu tawarkan?"
-    }
+# --- DATABASE STRUKTUR MODUL (BERDASARKAN DOKUMEN SOURCE) ---
+def generate_deep_learning_module(topik, kelas, penyusun="ZULFADHLI ROMADHON, S.Pd.,Gr"):
+    now = datetime.now()
+    return f"""
+# 🛡️ MODUL AJAR DEEP LEARNING (FASE F)
+**MATA PELAJARAN:** Pendidikan Jasmani, Olahraga, & Kesehatan (PJOK)
 
-# --- SIDEBAR NAVIGASI ---
+---
+
+## A. IDENTITAS MODUL
+* **Nama Sekolah:** SMAN 1 MUARA SUGIHAN
+* **Penyusun:** {penyusun}
+* **Kelas / Fase:** {kelas} / F
+* **Tahun Pelajaran:** 2025 / 2026
+* **Alokasi Waktu:** 12 JP (4 Pertemuan)
+
+## B. IDENTIFIKASI KESIAPAN PESERTA DIDIK
+* Peserta didik memiliki tingkat kesiapan fisik dan pengetahuan awal yang bervariasi.
+* Kebutuhan belajar mencakup pengenalan teknik bagi pemula dan penguatan taktik bagi yang mahir.
+* Latar belakang sosial budaya mempengaruhi keakraban dengan aktivitas fisik.
+
+## C. KARAKTERISTIK MATERI (DEEP LEARNING)
+* **Pengetahuan:** Prosedural (langkah teknik), Konseptual (aturan), Metakognitif (analisis performa).
+* **Relevansi Nyata:** Menumbuhkan kebugaran, kerja sama tim, sportivitas, dan kedisiplinan.
+* **Nilai Karakter:** Pantang menyerah, tanggung jawab, dan saling menghargai.
+
+## D. DIMENSI PROFIL LULUSAN
+1. **Penalaran Kritis:** Mampu menganalisis situasi permainan dan membuat keputusan taktis.
+2. **Kreativitas:** Mengaplikasikan variasi gerak untuk solusi dalam permainan.
+3. **Kolaborasi:** Bekerja sama efektif dalam tim untuk tujuan bersama.
+4. **Kemandirian:** Mampu mengelola diri dan berlatih secara inisiatif.
+5. **Kesehatan:** Memahami pentingnya pola hidup sehat melalui olahraga.
+
+## E. DESAIN PEMBELAJARAN (KERANGKA KERJA)
+* **Model:** Teaching Games for Understanding (TGfU) / Discovery Learning.
+* **Strategi:** Joyful Learning (pendekatan bermain), Meaningful Learning (simulasi nyata), Mindful Learning (refleksi).
+* **Digital:** Google Classroom, YouTube Tutorial, dan Video Replay untuk Peer-Feedback.
+
+## F. LANGKAH PEMBELAJARAN BERDIFERENSIASI
+### 1. Kegiatan Pendahuluan (15 Menit)
+* **Ritual Mindful:** Latihan pernapasan singkat untuk fokus.
+* **Apersepsi Joyful:** Video cuplikan pertandingan inspiratif.
+* **Pertanyaan Pemantik:** "Apa peran teknik ini dalam kemenangan sebuah tim?"
+
+### 2. Kegiatan Inti (60 Menit)
+* **Memahami:** Demonstrasi teknik dasar melalui video dan kartu tugas bergambar.
+* **Mengaplikasi (Diferensiasi Proses):**
+    * *Kelompok Dasar:* Fokus pada teknik statis dengan bantuan guru.
+    * *Kelompok Menengah:* Latihan variasi jarak dan bergerak.
+    * *Kelompok Mahir:* Simulasi tanding dengan tantangan taktik kompleks.
+* **Merefleksi:** Peserta didik merekam performa teman dan memberikan masukan (Peer-Coaching).
+
+### 3. Kegiatan Penutup (15 Menit)
+* Pendinginan dan refleksi bersama tentang tantangan yang dihadapi.
+* Guru memberikan apresiasi atas sportivitas dan usaha peserta didik.
+
+## G. ASESMEN PEMBELAJARAN
+### 1. Asesmen Diagnostik (Awal)
+* Kuesioner minat dan tes praktik keterampilan dasar (misal: memantulkan bola 30 detik).
+
+### 2. Asesmen Formatif (Proses)
+* Lembar observasi sikap (disiplin, kerja sama) dan rubrik performa saat drill.
+
+### 3. Asesmen Sumatif (Akhir)
+* **Kinerja:** Pertandingan modifikasi (3v3 atau 5v5).
+* **Proyek:** Laporan analisis taktik tim profesional dalam bentuk infografis/video.
+* **Tertulis:** Evaluasi pemahaman aturan dan strategi permainan.
+
+---
+**Mengetahui,** **Guru Mata Pelajaran,**
+Kepala Sekolah                                  {penyusun}
+    """
+
+# --- SIDEBAR NAVIGATION ---
 with st.sidebar:
-    st.markdown("<h1 style='text-align: center;'>🛡️ JMS</h1>", unsafe_allow_html=True)
-    st.markdown("<p style='text-align: center;'><b>Pintu Utama Guru Juara</b></p>", unsafe_allow_html=True)
+    st.image("https://cdn-icons-png.flaticon.com/512/3429/3429433.png", width=80)
+    st.title("JMS EduGate")
+    menu = st.radio("MODUL SISTEM:", ["Dashboard", "AI Module Generator", "Rubrik Asesmen", "Database Siswa", "Vibe Check"])
     st.divider()
-    menu = st.radio("MODUL SISTEM:", ["🏠 Beranda", "📝 Arsitek Modul (RPP)", "🎨 Studio Media Ajar", "📊 Radar Siswa", "⚡ Mood Booster", "📓 Jurnal Guru"])
-    st.divider()
-    st.caption(f"Update: {datetime.now().strftime('%H:%M')} | Server: Active")
+    st.write("Logged in as: kickboxingjms@gmail.com")
 
-# --- KONTEN APLIKASI ---
-
-if menu == "🏠 Beranda":
-    st.title("Dashboard JMS EduGate")
-    st.markdown(f"Selamat Datang, Administrator **{datetime.now().strftime('%d %M %Y')}**")
+# --- LOGIC PER MENU ---
+if menu == "Dashboard":
+    st.markdown("<div class='main-header'><h1>Pusat Kendali Guru Juara</h1><p>Sistem Operasi Deep Learning SMAN 1 Muara Sugihan</p></div>", unsafe_allow_html=True)
+    st.info("Aplikasi ini telah disinkronkan dengan Modul Ajar PJOK 2025/2026.")
     
-    col1, col2 = st.columns([2, 1])
+elif menu == "AI Module Generator":
+    st.title("📝 AI Deep Learning Generator")
+    st.write("Hasilkan Modul Ajar Lengkap berdasarkan Struktur Deep Learning.")
+    
+    col1, col2 = st.columns(2)
     with col1:
-        st.markdown("""
-        <div class='content-card'>
-        <h3>🌟 Visi Hari Ini</h3>
-        <p><i>"Guru yang hebat tidak hanya mengajar, tapi menginspirasi. Gunakan media visual untuk menyentuh imajinasi siswa."</i></p>
-        </div>
-        """, unsafe_allow_html=True)
+        topik = st.selectbox("Pilih Unit Olahraga:", 
+                            ["Bola Basket", "Bola Voli", "Sofbol", "Pencak Silat", "Lompat Jangkit", "Lempar Cakram", "Senam Irama", "Kebugaran", "HIV/AIDS"])
     with col2:
-        st.metric("Kesiapan Media", "94%", "+4%")
+        kelas = st.selectbox("Pilih Kelas:", ["XII", "XI", "X"])
+        
+    if st.button("Generate Modul Lengkap"):
+        modul = generate_deep_learning_module(topik, kelas)
+        st.markdown("<div class='module-box'>", unsafe_allow_html=True)
+        st.markdown(modul)
+        st.markdown("</div>", unsafe_allow_html=True)
+        st.download_button("Download Modul (MD)", modul, file_name=f"Modul_JMS_{topik}.md")
 
-elif menu == "📝 Arsitek Modul (RPP)":
-    st.title("📝 AI Lesson Architect (RPP Lengkap)")
-    topik = st.text_input("Topik Pelajaran (Misal: Tektonisme atau Teknik Dasar Kickboxing):")
-    if st.button("Susun Modul Lengkap"):
-        st.success("Modul Berhasil Disusun!")
-        with st.expander("Lihat RPP Lengkap"):
-            st.write(f"### RPP: {topik}")
-            st.write("**Metode:** Blended Learning / Discovery Learning")
-            st.write("**Asesmen:** Formatif (Observasi) & Sumatif (Kuis)")
-            st.markdown("---")
-            st.write("**Langkah-Langkah:**")
-            st.write("1. Salam Pembuka & Cek Semangat (5 Menit)")
-            st.write("2. Pemutaran Media Visual (10 Menit)")
-            st.write("3. Eksplorasi Mandiri & Diskusi (60 Menit)")
-            st.write("4. Refleksi & Doa Penutup (15 Menit)")
-
-elif menu == "🎨 Studio Media Ajar":
-    st.title("🎨 Creative Media Studio")
-    st.write("Ubah topik sulit menjadi konten visual yang memukau.")
+elif menu == "Rubrik Asesmen":
+    st.title("📊 Rubrik Asesmen Komprehensif")
+    st.write("Detail kriteria penilaian untuk aspek Keterampilan, Taktik, dan Sikap.")
     
-    topik_media = st.text_input("Masukkan Topik untuk Media Ajar:")
-    if st.button("Buat Paket Media Lengkap"):
-        if topik_media:
-            data = generate_creative_media(topik_media)
-            
-            col_a, col_b = st.columns(2)
-            with col_a:
-                st.markdown("<div class='content-card'>", unsafe_allow_html=True)
-                st.subheader("🖼️ Struktur Slide Presentasi")
-                for slide in data["Slide"]:
-                    st.write(slide)
-                st.markdown("</div>", unsafe_allow_html=True)
-                
-            with col_b:
-                st.markdown("<div class='content-card'>", unsafe_allow_html=True)
-                st.subheader("🎬 Naskah Video Edukasi")
-                st.write(data["Video"])
-                st.markdown("</div>", unsafe_allow_html=True)
-            
-            st.markdown("<div class='content-card'>", unsafe_allow_html=True)
-            st.subheader("📝 Draft Lembar Kerja Siswa (LKS)")
-            st.info(data["LKS"])
-            st.markdown("</div>", unsafe_allow_html=True)
-            
-            st.download_button("Unduh Paket Media (Markdown)", str(data), file_name=f"Media_{topik_media}.md")
-        else:
-            st.error("Masukkan topik terlebih dahulu!")
+    st.subheader("1. Rubrik Penilaian Kinerja (Permainan)")
+    st.table(pd.DataFrame({
+        "Aspek": ["Teknik Dasar", "Taktik", "Kerja Sama", "Sportivitas"],
+        "Kriteria Baik (4)": ["Gerak akurat & konsisten", "Keputusan taktis tepat", "Komunikasi aktif", "Menghargai lawan & aturan"],
+        "Kriteria Cukup (2)": ["Gerak cukup tapi belum stabil", "Sering salah posisi", "Kurang komunikasi", "Kadang emosional"]
+    }))
 
-elif menu == "⚡ Mood Booster":
-    st.title("⚡ Mood Booster & Ice Breaking")
-    kondisi = st.selectbox("Kondisi Kelas?", ["Ngantuk Berat", "Sangat Berisik", "Kurang Fokus"])
-    if st.button("Berikan Solusi Juara"):
-        if kondisi == "Ngantuk Berat":
-            st.warning("🔥 **SOLUSI KICKBOXING:** Instruksikan seluruh siswa berdiri. Lakukan gerakan 'Double Jab - Cross' sebanyak 10 set dengan teriakan semangat!")
-        elif kondisi == "Sangat Berisik":
-            st.info("🧘 **SOLUSI MINDFULNESS:** Lakukan hening sejenak selama 60 detik. Fokus pada suara terjauh yang bisa didengar siswa.")
+elif menu == "Vibe Check":
+    st.title("⚡ Vibe Check (Instruksi Real-Time)")
+    mood = st.select_slider("Kondisi Kelas?", ["Ngantuk", "Bosan", "Berisik", "Siap"])
+    if st.button("Dapatkan Solusi"):
+        if mood == "Ngantuk":
+            st.error("🔥 **SOLUSI:** Gerakan 'Double Jab - Cross' Kickboxing 10 set untuk memacu adrenalin!")
+        elif mood == "Berisik":
+            st.warning("🧘 **SOLUSI:** Mindful Breathing (4-4-4) untuk menenangkan saraf.")
         else:
-            st.success("🎲 **SOLUSI GAME:** Mainkan kuis tebak kata cepat selama 5 menit.")
-
-# (Bagian Radar Siswa dan Jurnal tetap ada namun disingkat untuk efisiensi kode)
-else:
-    st.title(menu)
-    st.write("Fitur ini sudah aktif dan siap menerima data Anda.")
+            st.success("🌟 **SOLUSI:** Lanjutkan materi inti dengan tantangan kompetisi kecil.")
